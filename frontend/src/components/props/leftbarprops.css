@@ -1,0 +1,16 @@
+.items{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    /* font-size: 19px;  
+    font-weight: bold;    */
+    /* justify-content: center; */
+}
+.icons{
+    width: 30px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+/* hr{color:red ;width: 50px;display: flex;} */

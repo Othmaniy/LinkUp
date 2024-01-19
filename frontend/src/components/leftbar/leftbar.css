@@ -1,0 +1,29 @@
+/* ... (other CSS rules) */
+
+.leftn {
+    display: flex;
+    flex: 2;
+    flex-direction: column; /* Make sure the content stacks vertically */
+    position: sticky;
+    top: 60px;
+    height: calc(100vh - 60px); /* Adjust the height to account for the top bar */
+    overflow-y: auto;
+  }
+  ::-webkit-scrollbar{
+    display: none;
+  }
+  
+  .leftbar {
+    /* Styles for your left sidebar */
+    width: 100%; /* Make sure the width is set to 100% */
+    /* ... (other styles) */
+  }
+  hr{
+    width: 200px;
+  }
+  /* ... (other CSS rules) */
+  @media(max-width:600px){
+    .leftn{
+        display: none;
+    }
+}

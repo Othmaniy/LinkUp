@@ -1,0 +1,69 @@
+.rightbar{
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    position: sticky;
+    top: 60px;
+    height: calc(100vh - 60px);
+    overflow-y: scroll;
+    
+}
+
+.all_right{
+    width: 100%;
+}
+.buttonn1,.button2{
+    /* background-color:aqua; */
+    width: 70px;
+    padding: 5px;
+    border-radius: 0px;
+}
+.button2{
+    background-color: rgba(236, 18, 18, 0.788);
+}
+.buttonn1{
+    background-color: rgba(0, 162, 255, 0.858);
+}
+.frendsWrapper{
+    display: flex;
+    margin-top: 5px;
+    /* width: 100%; */
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+}
+.frendsandButton{
+    display: flex;
+    gap: 30%;
+    /* justify-content: space-between; */
+    padding: 4px;
+    /* align-items: center; */
+}
+.rightp{
+    display: inline;
+}
+.notifications{
+    padding: 10px;
+}
+.username{
+    font-weight: bold;
+}
+.use{
+    position: relative;
+    margin-right: 20%;
+}
+.online{
+    width: 10px;
+    height: 10px;
+    background-color: limegreen;
+    border-radius: 50%;
+    position: absolute;
+    left: 30px;
+}
+
+@media(max-width:600px){
+    .rightbar{
+        display: none;
+    }
+}

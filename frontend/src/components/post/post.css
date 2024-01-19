@@ -1,0 +1,58 @@
+
+
+
+.container{
+    padding: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    background-color: white;
+    /* height: 90vh; */
+    
+}
+.photo{
+    width: 100%;
+}
+
+.user{
+    display: flex;
+    justify-content: space-between;
+}
+.userprofile{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    line-height: 20px;
+}
+.profiledetails{
+    display: flex;
+    flex-direction: column;
+}
+.postimage{
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+}
+.reactions{
+    align-items: center;
+    /* justify-content: center; */
+}
+.singleitem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.commentdiv{
+    cursor: pointer;
+}
+
+@media(max-width:600px){
+    .container{
+      padding: 5px;
+      width: 95%;
+      
+    }
+}

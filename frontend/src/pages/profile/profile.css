@@ -1,0 +1,87 @@
+.allContainer{
+    width: 95%;
+    margin: 10px auto ;
+    position: relative;
+}
+
+.images{
+    width: 100%;
+    height: 300px;
+    margin: 0 0 0 0;
+}
+
+.coverpicture{
+    width: 100%;
+    height: 100%;
+    
+   
+}
+.profierpicture{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 225px;
+}
+.contact{
+    display: flex;
+    height: 200px;
+    background-color: white;
+    width: 85%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 6px;
+    /* padding-top: 80px; */
+    align-items: center;
+    justify-content: space-between;
+    
+
+}
+.icons{
+    display: flex;
+
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.location{
+ display: flex;
+margin-top: 10px;
+padding-top: 0px;
+ flex-direction: column;
+ /* align-items: ; */
+ padding-left: 60px;
+    
+}
+.middleicons{
+    /* width: 50%; */
+    display: flex;
+    justify-content: space-between;
+    /* gap: 20px; */
+    /* margin-top: 0px;
+    padding-top: 0px;*/
+    margin-left: -15px;
+}
+.adloc{
+    margin-right: 20px;
+}
+.ppname{
+    padding-left: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 0px;
+    /* padding-top: 2px; */
+    margin-bottom: 0px;
+}
+.profileButton{
+    width: 100px;
+    height: 40px;
+    /* align-self: center; */
+    margin-left: 12px;
+    background-color: #0e47c1;
+    color: white;
+}

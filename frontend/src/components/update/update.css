@@ -1,0 +1,24 @@
+.update{
+    position: absolute;
+    z-index: 500; 
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* margin: auto; */
+    margin-left: 470px;
+    margin-top: 250px;
+
+    width: 600px;
+    height: 50%;
+    background-color: green;
+    /* padding: 50px; */
+    display: flex;
+    flex: 1;
+
+}
+.upbutton{
+    width: 100px;
+    height: 50px;
+    background-color: red;
+}

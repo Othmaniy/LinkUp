@@ -1,0 +1,68 @@
+/* .signup{
+    background-color: red;
+} */
+
+.alli{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    height: 40px;
+    border-radius: 4px;
+    padding: 8px;
+	border: 1px solid #ccc;
+    width: 95%;
+	
+    
+}
+
+.leftcontainer{
+    /* margin-top: 30px; */
+    /* background-image: url("../../assets//Arba_Minch_University.png"); */
+    background-color: aqua;
+    /* background-size: cover;
+    background-repeat: no-repeat; */
+}
+button{
+    padding: 9px;
+    background-color: green;
+    border: none;
+    border-radius: 4px;
+    width: 95%;
+}
+.leftcontainer,.rightcontainer{
+    height: 400px;
+    border: 1px solid black;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 4px;
+}
+h1{
+    font-size: 3.5em;
+}
+.button1{
+    background-color: antiquewhite;
+    width: 200px;
+}
+.a{
+    display: flex;
+    flex-direction: row-reverse;
+    width:100%;
+}
