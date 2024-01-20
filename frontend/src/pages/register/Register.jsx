@@ -7,6 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import axios from "axios"
+import backimage from "../../assets/magicpattern-seamless-patterns-1705701406969.png";
 function Register() {
 
   const [form,SetForm] =useState({});
@@ -35,12 +36,13 @@ function Register() {
 
   }
   return (
-    <div className='signup'>
+    <div className='signup' style={{
+    }}>
     <div className="alli">
-        <Container >
+        <Container style={{backgroundColor:" fff"}} >
           <Row className='a' >
             
-              <Col sm={12} md={6} className="leftcontainer ">
+              <Col sm={12} md={6} className="leftcontainer shadow ">
                 <h1>wellcome to amu book</h1>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
@@ -55,7 +57,7 @@ function Register() {
               </Col>
         
             
-              <Col sm={12} md={6} className="rightcontainer">
+              <Col sm={12} md={6} className="rightcontainer shadow ">
                 <h1>register</h1>
                 <form onSubmit={handleSubmit}>
                   <input

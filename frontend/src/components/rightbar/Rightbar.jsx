@@ -1,7 +1,7 @@
  import React from 'react'
  import "./rightbar.css"
  import user from "../../assets/Final.jpg.jpg"
- 
+
  function Rightbar() {
    return (
      <div className='rightbar'>

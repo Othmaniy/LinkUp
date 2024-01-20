@@ -18,7 +18,6 @@ import video from "../../assets/video_1179069.png"
 import message from "../../assets/comments_2190552.png"
 
 
-
 function Leftbar() {
   return (
     <div className='leftn'>
