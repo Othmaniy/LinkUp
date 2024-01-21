@@ -19,7 +19,7 @@ function Register() {
   const [ispasswordFocused, setpasswordFocused] = useState(false);
   const [isnameFocused, setnameFocused] = useState(false);
   const getInputStyle = (isFocused, value) => ({
-    borderColor: isFocused ? "orange" : "rgb(37, 205, 205)",
+    borderColor: isFocused ?"rgb(247, 89, 144)" : "rgb(37, 205, 205)",
     borderWidth: isFocused ? "3px" : "3px",
     // boxShadow: "none",
     backgroundColor: !isFocused && value === "" ? "#fcb6b6" : "white",
@@ -80,19 +80,20 @@ function Register() {
         <Container style={{ backgroundColor: " fff" }}>
           <Row className="a">
             <Col sm={12} md={6} className="leftcontainer shadow ">
-              <h1>wellcome to amu book</h1>
+              <h2>welcome to AMU book</h2>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
                 sit eos officia neque necessitatibus labore tempore aliquid
                 voluptatum. Earum, dolor.
               </p>
-              <Link to="/login">
+              {/* <Link to="/login">
                 <button className="mt-5 button1">login</button>
-              </Link>
+              </Link> */}
             </Col>
 
             <Col sm={12} md={6} className="rightcontainer shadow ">
               <span style={{fontSize:"20px"}}>create new account</span>
+              <span>alresdy have an account <a href="/login" style={{color:"rgb(37, 205, 205)"}}>login</a></span>
               <form onSubmit={handleSubmit}>
                 <input
                   type="text"

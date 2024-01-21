@@ -10,14 +10,45 @@ import { AuthContext } from "../../components/context/authcontext";
 function Login() {
   const [form,setForm] = useState({})
   const[error,setError] =useState(null)
+  const[isemailFocused,setemailFocused]=useState(false)
+  const [ispasswordFocused, setpasswordFocused] = useState(false);
 const handleChange =(e)=>{
   setForm({...form,[e.target.name]:e.target.value})
 }
+const getInputStyle = (isFocused, value) => ({
+  borderColor: isFocused ?"rgb(247, 89, 144)" : "rgb(37, 205, 205)",
+  borderWidth: isFocused ? "3px" : "3px",
+  // boxShadow: "none",
+  backgroundColor: !isFocused && value === "" ? "#fcb6b6" : "white",
+});
+const handleFocus = (setstate) => {
+  setstate(true);
+};
+const handleBlur = (setstate) => {
+  setstate(false);
+};
 const navigate =useNavigate()
 console.log(form);
   const {login}= useContext(AuthContext)
   const handleSubmit=async(e)=>{
     e.preventDefault();
+    const requiredFields = [
+      "username",
+      "email",
+      "password",
+      "username",
+      "name",
+    ];
+    let hasEmptyField = false;
+    for (const field of requiredFields) {
+      if (!form[field]) {
+        hasEmptyField = true;
+        setForm((prevForm) => ({
+          ...prevForm,
+          [field]: "",
+        }));
+      }
+    }
     try{
       await login(form);
       navigate("/")
@@ -39,21 +70,23 @@ console.log(form);
           <Row>
             
               <Col sm={12} md={6} className="leftcontainer shadow">
-                <h1>login</h1>
+                
+                
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
                   sit eos officia neque necessitatibus labore tempore aliquid
                   voluptatum. Earum, dolor.
                 </p>
                 <p>donot have an account</p>
-                <Link to="/signup">
+                {/* <Link to="/signup">
                 <button className="mt-5 button1" >register</button>
-                </Link>
+                </Link> */}
               </Col>
         
             
               <Col sm={12} md={6} className="rightcontainer shadow">
-                <h1>login</h1>
+              <span>login to your account</span>
+                <span>donot have an account  <a href="/signup" style={{color:"rgb(37, 205, 205)"}}>register</a></span>
                 <form onSubmit={handleSubmit}>
                   <input
                     type="email"
@@ -61,6 +94,11 @@ console.log(form);
                     name="email"
                     className="mt-3"
                     onChange={handleChange}
+                    onFocus={()=>handleFocus(setemailFocused)}
+                    onBlur={()=>{
+                      handleBlur(setemailFocused)
+                    }}
+                    style={getInputStyle(isemailFocused,form.email)}
                   />
 
                   <input
@@ -69,12 +107,18 @@ console.log(form);
                     name="password"
                     className="mt-3"
                     onChange={handleChange}
+                    onFocus={()=>handleFocus(setpasswordFocused)}
+                    onBlur={()=>{
+                      handleBlur(setpasswordFocused)
+                    }}
+                    style={getInputStyle(ispasswordFocused,form.password)}
                   />
                   <button type="submit" className="mt-3 signIn">
                     Log In
                   </button>
                 </form>
-                {error && error}
+                <span style={{color:"red"}} className="mt-2">{error && error}</span>
+                
               </Col>
             
           </Row>

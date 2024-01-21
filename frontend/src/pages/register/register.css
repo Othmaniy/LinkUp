@@ -32,7 +32,7 @@ input{
     border-radius: 4px;
     padding: 8px;
     /* border-color: blue; */
-	border: 3px solid blue;
+	border: 3px solid rgb(66, 135, 245);
     width: 95%;
     /* color: red; */
     /* border: none; */
@@ -50,7 +50,7 @@ button{
     font-size: 20px;
 }
 .leftcontainer,.rightcontainer{
-    height: 400px;
+    height: 500px;
     /* border: 1px solid black; */
     display: flex;
     width: 48%;
