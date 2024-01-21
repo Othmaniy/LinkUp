@@ -1,103 +1,161 @@
-import React, { useState } from 'react'
-import "./register.css"
-import {Link} from "react-router-dom"
+import React, { useState } from "react";
+import "./register.css";
+import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import axios from "axios"
+import axios from "axios";
 import backimage from "../../assets/magicpattern-seamless-patterns-1705701406969.png";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 function Register() {
+  const [visible, setVisible] = useState(false);
+  const [form, SetForm] = useState({});
+  const [resmessage, setResmessage] = useState("");
+  const [isUsernameFocused, setUsernameFocused] = useState(false);
+  const [isemailFocused, setemailFocused] = useState(false);
 
-  const [form,SetForm] =useState({});
-  const [resmessage,setResmessage] = useState("");
+  const [ispasswordFocused, setpasswordFocused] = useState(false);
+  const [isnameFocused, setnameFocused] = useState(false);
+  const getInputStyle = (isFocused, value) => ({
+    borderColor: isFocused ? "orange" : "rgb(37, 205, 205)",
+    borderWidth: isFocused ? "3px" : "3px",
+    // boxShadow: "none",
+    backgroundColor: !isFocused && value === "" ? "#fcb6b6" : "white",
+  });
+  const handleFocus = (setstate) => {
+    setstate(true);
+  };
+  const handleBlur = (setstate) => {
+    setstate(false);
+  };
 
-  const handleChange=(e)=>{
-    SetForm({...form,[e.target.name]:e.target.value})
-
-  }
+  const handleChange = (e) => {
+    SetForm({ ...form, [e.target.name]: e.target.value });
+  };
   console.log(form);
 
-  const handleSubmit=async(e)=>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    try{
-      const response = await axios.post("http://localhost:4000/api/auth/createaccount",form)
+    const requiredFields = [
+      "username",
+      "email",
+      "password",
+      "username",
+      "name",
+    ];
+    let hasEmptyField = false;
+    for (const field of requiredFields) {
+      if (!form[field]) {
+        hasEmptyField = true;
+        SetForm((prevForm) => ({
+          ...prevForm,
+          [field]: "",
+        }));
+      }
+    }
+
+    if (hasEmptyField) {
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        "http://localhost:4000/api/auth/createaccount",
+        form
+      );
       console.log(response);
       console.log(response.data);
       console.log(response.data.message);
       setResmessage(response.data.message);
-    }
-    catch(err){
+    } catch (err) {
       console.log(err);
       console.log(err.response.data.message);
-
     }
-
-  }
+  };
   return (
-    <div className='signup' style={{
-    }}>
-    <div className="alli">
-        <Container style={{backgroundColor:" fff"}} >
-          <Row className='a' >
-            
-              <Col sm={12} md={6} className="leftcontainer shadow ">
-                <h1>wellcome to amu book</h1>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
-                  sit eos officia neque necessitatibus labore tempore aliquid
-                  voluptatum. Earum, dolor.
-                </p>
-                <Link to="/login">
+    <div className="signup" style={{}}>
+      <div className="alli">
+        <Container style={{ backgroundColor: " fff" }}>
+          <Row className="a">
+            <Col sm={12} md={6} className="leftcontainer shadow ">
+              <h1>wellcome to amu book</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
+                sit eos officia neque necessitatibus labore tempore aliquid
+                voluptatum. Earum, dolor.
+              </p>
+              <Link to="/login">
+                <button className="mt-5 button1">login</button>
+              </Link>
+            </Col>
 
-                <button className="mt-5 button1" >login</button>
-                </Link>
+            <Col sm={12} md={6} className="rightcontainer shadow ">
+              <span style={{fontSize:"20px"}}>create new account</span>
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  placeholder="username"
+                  name="username"
+                  className="mt-3"
+                  onChange={handleChange}
+                  onFocus={() => handleFocus(setUsernameFocused)}
+                  onBlur={()=>{
+                    handleBlur(setUsernameFocused)
+                  }}
+                  style={getInputStyle(isUsernameFocused,form.username)}
+                />
+
+                <input
+                  type="email"
+                  placeholder="email"
+                  name="email"
+                  className="mt-3"
+                  onChange={handleChange}
+                  onFocus={() => handleFocus(setemailFocused)}
+                  onBlur={()=>{handleBlur(setemailFocused)}}
+                  style={getInputStyle(isemailFocused,form.email)}
+                />
+                <input
+                  type="text"
+                  placeholder="first name"
+                  name="name"
+                  className="mt-3"
+                  onChange={handleChange}
+                  onFocus={() => handleFocus(setnameFocused)}
+                  onBlur={()=>{handleBlur(setnameFocused)}}
+                  style={getInputStyle(isnameFocused,form.name)}
+                />
+                <div className="visibility">
+                <input
+                  type={visible?"text":"password"}
+                  placeholder="upassword"
+                  name="password"
+                  className="mt-3"
+                  onChange={handleChange}
+                  onFocus={() => handleFocus(setpasswordFocused)}
+                  onBlur={()=>{handleBlur(setpasswordFocused)}}
+                  style={getInputStyle(ispasswordFocused,form.password)}
+
+                />
+      
+                <div className="eye" onClick={()=>setVisible(!visible)}>
+                  {visible?(<AiFillEye />):(<AiFillEyeInvisible/>)}
                 
-              </Col>
-        
-            
-              <Col sm={12} md={6} className="rightcontainer shadow ">
-                <h1>register</h1>
-                <form onSubmit={handleSubmit}>
-                  <input
-                    type="text"
-                    placeholder="username"
-                    name="username"
-                    className="mt-3"
-                    onChange={handleChange}
-                  />
-
-                  <input
-                    type="email"
-                    placeholder="email"
-                    name="email"
-                    className="mt-3"
-                    onChange={handleChange}
-                  />
-                  <input
-                    type="password"
-                    placeholder="upassword"
-                    name="password"
-                    className="mt-3"
-                    onChange={handleChange}
-                  />
-                  <input
-                    type="text"
-                    placeholder="name"
-                    name="name"
-                    className="mt-3"
-                    onChange={handleChange}
-                  />
-                  
-                  <button type="submit" className="mt-3 signIn" onSubmit={handleSubmit}>
-                    signup
-                  </button>
-                  <h6>{ resmessage}</h6>
-                  
-                </form>
-              </Col>
-            
+                </div>
+                </div>
+                
+                <button
+                  type="submit"
+                  className="mt-3 signIn"
+                  onSubmit={handleSubmit}
+                >
+                  signup
+                </button>
+                <h6>{resmessage}</h6>
+              </form>
+            </Col>
           </Row>
         </Container>
       </div>
@@ -122,7 +180,7 @@ function Register() {
 </div>
      */}
     </div>
-  )
+  );
 }
 
-export default Register
+export default Register;

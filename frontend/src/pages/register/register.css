@@ -1,9 +1,9 @@
 .signup{
     /* background-color: yellow; */
-    background-image: url('../../assets//magicpattern-seamless-patterns-1705701406969.png');
+    /* background-image: url('../../assets//magicpattern-seamless-patterns-1705701406969.png');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center; */
 }
 
 .alli{
@@ -28,29 +28,26 @@ form{
     /* background-color: #3754ab; */
 }
 input{
-    height: 40px;
+    height: 50px;
     border-radius: 4px;
     padding: 8px;
-	/* border: 1px solid #ccc; */
-    width: 90%;
+    /* border-color: blue; */
+	border: 3px solid blue;
+    width: 95%;
+    /* color: red; */
+    /* border: none; */
 	
     
 }
 
-.leftcontainer,.rightcontainer{
-    /* margin-top: 30px; */
-    /* background-image: url("../../assets//Arba_Minch_University.png"); */
-    /* background-color: aqua; */
-    /* background-size: cover;
-    background-repeat: no-repeat; */
-   
-}
 button{
     padding: 9px;
-    background-color: green;
+    background-color:rgb(37, 205, 205);
     border: none;
+    color: white;
     border-radius: 4px;
     width: 95%;
+    font-size: 20px;
 }
 .leftcontainer,.rightcontainer{
     height: 400px;
@@ -65,10 +62,7 @@ button{
     /* background-color: #ccc; */
     margin: 10px;
 }
-.leftcontainer{
-    /* margin-right: 1px; */
-    /* padding: 5px; */
-}
+
 h1{
     font-size: 3.5em;
 }
@@ -79,6 +73,31 @@ h1{
 .a{
     display: flex;
     flex-direction: row-reverse;
-    width:100%;
+    width:95%;
+    margin: auto;
     /* background-color: #000; */
+}
+.visibility{
+    display: flex;
+  position: relative;
+  width: 95%;
+}
+.visibility input{
+    width: 100%;
+}
+.eye{
+    position: absolute;
+    top: 22px;
+    left: 390px;
+    /* transform: translateY(-50%);  */
+    color: rgb(37, 205, 205);
+}
+input:focus {
+    outline: none;
+  }
+@media(max-width:742px){
+    .leftcontainer,.rightcontainer{
+        width: 100%;
+    }
+
 }

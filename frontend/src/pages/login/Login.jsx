@@ -34,11 +34,11 @@ console.log(form);
     
   return (
     <>
-      <div className="all">
+      <div className="alli">
         <Container>
           <Row>
             
-              <Col sm={12} md={6} className="leftcontainer">
+              <Col sm={12} md={6} className="leftcontainer shadow">
                 <h1>login</h1>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
@@ -52,7 +52,7 @@ console.log(form);
               </Col>
         
             
-              <Col sm={12} md={6} className="rightcontainer">
+              <Col sm={12} md={6} className="rightcontainer shadow">
                 <h1>login</h1>
                 <form onSubmit={handleSubmit}>
                   <input
