@@ -40,6 +40,12 @@ const storage = multer.diskStorage({
     const file =req.file;
     res.status(200).json(file.filename)
   })
+  // Update the endpoint handling in the server
+app.post('/api/upload/stories', upload.single('file'), (req, res) => {
+  const file = req.file;
+  res.status(200).json(file.filename);
+});
+
 app.use("/api/auth",authRouter)
 app.use("/api/posts",postRouter)
 app.use("/api/comments",commentRouter)

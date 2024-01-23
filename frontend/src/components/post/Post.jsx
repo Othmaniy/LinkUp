@@ -138,4 +138,3 @@ const handleDelete=()=>{
 export default Post
 
 
-//"Cannot delete or update a parent row: a foreign key constraint fails (`socialmeadiaapp`.`comment`, CONSTRAINT `comment_ibfk_3` FOREIGN KEY (`post_id`) REFERENCES `post` (`post_id`) ON UPDATE CASCADE)"

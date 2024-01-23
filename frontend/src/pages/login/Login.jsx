@@ -7,11 +7,13 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import { AuthContext } from "../../components/context/authcontext";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 function Login() {
   const [form,setForm] = useState({})
   const[error,setError] =useState(null)
   const[isemailFocused,setemailFocused]=useState(false)
   const [ispasswordFocused, setpasswordFocused] = useState(false);
+  const [visible,setVisible] =useState(false)
 const handleChange =(e)=>{
   setForm({...form,[e.target.name]:e.target.value})
 }
@@ -100,7 +102,7 @@ console.log(form);
                     }}
                     style={getInputStyle(isemailFocused,form.email)}
                   />
-
+                  <div className="visibility">
                   <input
                     type="password"
                     placeholder="password"
@@ -113,6 +115,11 @@ console.log(form);
                     }}
                     style={getInputStyle(ispasswordFocused,form.password)}
                   />
+                  <div className="eye" onClick={()=>setVisible(!visible)}>
+                    {visible?(<AiFillEye/>):(<AiFillEyeInvisible/>)}
+                  </div>
+                  </div>
+                  
                   <button type="submit" className="mt-3 signIn">
                     Log In
                   </button>

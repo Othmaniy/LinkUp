@@ -12,12 +12,14 @@ import getRequest from '../axios/axios';
 
 function Stories() {
   const {currentUser} = useContext(AuthContext)
-  const [file,setFile]=useState(null);
+  // const [storyFile,setstoryFile]=useState(null);
+  const [storyFile, setstoryFile] = useState(null);
+
   const upload=async()=>{
     try{
       const formData = new FormData();
-      formData.append("file",file)
-      const res= await getRequest.post("/upload",formData)
+      formData.append("file",storyFile)
+      const res= await getRequest.post("/upload/stories",formData)
       return res.data
   
     }
@@ -69,9 +71,9 @@ console.log('Error status:', error.response.status);
   const handleStory=async(e)=>{
     e.preventDefault();
     let imageUrl="";
-    if(file) imageUrl = await upload();
+    if(storyFile) imageUrl = await upload();
     mutation.mutate({storyimage:imageUrl});
-    setFile(null)
+    setstoryFile(null)
 
   }
   //   const stories=[
@@ -102,12 +104,12 @@ console.log('Error status:', error.response.status);
         <div className='addstory'>
         <img src={currentUser.profilepic} alt="" className='storyimage' />
         <span className='storyname'>{currentUser.name}</span>
-        <input type="file" id='file' className='storyinput' onChange={(e)=>{setFile(e.target.files[0])}} />
-        <label htmlFor="file">
+        <input type="file" id='storyfile' className='storyinput' onChange={(e)=>{setstoryFile(e.target.files[0])}} />
+        <label htmlFor="storyfile">
         <p className='add'>+</p>
         </label>
-        <button className='storyshare' onClick={handleStory}>s</button>
-        {/* <button className='add'>+</button> */}
+        <button className='storyshare' onClick={handleStory} style={{zIndex:1}}>s</button>
+        
        </div>
       { isLoading?"loading": data.map(story=>(
        <div className='singlestory'>

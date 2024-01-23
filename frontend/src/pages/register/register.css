@@ -87,10 +87,14 @@ h1{
 }
 .eye{
     position: absolute;
-    top: 22px;
+    top: 25px;
     left: 390px;
     /* transform: translateY(-50%);  */
     color: rgb(37, 205, 205);
+
+}
+.eye:hover{
+    color:rgb(247, 89, 144);
 }
 input:focus {
     outline: none;

@@ -46,15 +46,35 @@ const queryClient=useQueryClient();
 
 
   // Mutations
- 
-    const handleClick=async(e)=>{
-      e.preventDefault();
-      let imageUrl="";
-      if(file) imageUrl = await upload();
-      mutation.mutate({postdescr,postimage:imageUrl})
-      setPostdescr("")
-      setFile(null)
+  const handleClick = async (e) => {
+    e.preventDefault();
+    console.log("Share button clicked");
+  
+    let imageUrl = "";
+    
+    if (file) {
+      console.log("File selected:", file);
+      
+      try {
+        imageUrl = await upload();
+        console.log("Image uploaded successfully:", imageUrl);
+      } catch (error) {
+        console.error("Error uploading image:", error);
+        // Add appropriate error handling if needed
+        return;
+      }
+    } else {
+      console.log("No file selected");
     }
+  
+    console.log("Posting with imageUrl:", imageUrl);
+    
+    mutation.mutate({ postdescr, postimage: imageUrl });
+    setPostdescr("");
+    setFile(null);
+  };
+  
+  
   return (
     <div className='share mt-1 mb-3'>
         <div className='sharecontainer shadow'>
