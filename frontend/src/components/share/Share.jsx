@@ -22,6 +22,7 @@ function Share() {
     try{
       const formData = new FormData();
       formData.append("file",file)
+       //httplocalhost4000api
       const res= await getRequest.post("/upload",formData)
       return res.data
   
@@ -34,6 +35,7 @@ function Share() {
 
   const mutation = useMutation((newPost)=>{
     return getRequest.post("/posts",newPost)
+   
   },{
     onSuccess: () => {
       // Invalidate and refetch
@@ -112,7 +114,7 @@ const queryClient=useQueryClient();
                 <span>tagfrend</span>
                 </div>
             </div>
-            <button className='sharebutton' onClick={handleClick}>share</button>
+            <button className='sharebutton' onClick={handleClick}>post</button>
            </div>
             
         </div>

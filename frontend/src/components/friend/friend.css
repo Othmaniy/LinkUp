@@ -1,10 +1,20 @@
 .use1{
     margin-right: 0px;
 }
-
+.use{
+    gap: 20px;
+}
 .frendsandButton{
     gap: 0px;
 }
-.buttons{
+/* .buttons{
     margin-left: 0px;
+} */
+.buttonn1{
+    width: 100px;
+    height: 40px;
+    background-color: rgb(40, 122, 128);
+}
+.friendimg{
+    margin-right: 10px;
 }

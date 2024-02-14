@@ -10,32 +10,35 @@ import EmailIcon from '@mui/icons-material/Email';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import userImage from '../../assets/Final.jpg.jpg';
 import { AuthContext } from '../context/authcontext';
+import { Link } from 'react-router-dom';
 function Navigation() {
   const {currentUser} = useContext(AuthContext)
   return (
     <>
     <div className='navbar'>
-    <div className='left'>
+    <div className='leftl'>
         <span>ousmanbook</span>
         <HomeOutlinedIcon />
-        <DarkModeOutlinedIcon />
+        <Link to="/friends"><PersonIcon /></Link>
+        
         <AppsOutlinedIcon/>
         <div className='search' style={{display:"flex"}}>
-          <SearchIcon />
+          {/* <SearchIcon className='sic' /> */}
           <input className='in1' type="text" placeholder='search'/>
         </div>
       </div>
       
       <div className='rightnav'>
-        <PersonIcon />
+        
         <EmailIcon />
         <NotificationsIcon />
         <div className='userp'>
-        {/* <img src={currentUser.profilepicture} className='profile' /> */}
-        
+        <img src={"/upload/"+currentUser.profilepicture} className='profile' />
+        <Link  to ={`/profile/${currentUser.user_id}`}>
         <span>
           {currentUser.name}
-        </span>
+        </span></Link>
+        
         </div>
         
       </div>

@@ -18,6 +18,7 @@ function Register() {
 
   const [ispasswordFocused, setpasswordFocused] = useState(false);
   const [isnameFocused, setnameFocused] = useState(false);
+  const [islastnameFocused, setlastnameFocused] = useState(false);
   const getInputStyle = (isFocused, value) => ({
     borderColor: isFocused ?"rgb(247, 89, 144)" : "rgb(37, 205, 205)",
     borderWidth: isFocused ? "3px" : "3px",
@@ -44,6 +45,7 @@ function Register() {
       "password",
       "username",
       "name",
+      "lastname",
     ];
     let hasEmptyField = false;
     for (const field of requiredFields) {
@@ -127,6 +129,16 @@ function Register() {
                   onFocus={() => handleFocus(setnameFocused)}
                   onBlur={()=>{handleBlur(setnameFocused)}}
                   style={getInputStyle(isnameFocused,form.name)}
+                />
+                   <input
+                  type="text"
+                  placeholder="last name"
+                  name="lastname"
+                  className="mt-3"
+                  onChange={handleChange}
+                  onFocus={() => handleFocus(setlastnameFocused)}
+                  onBlur={()=>{handleBlur(setlastnameFocused)}}
+                  style={getInputStyle(islastnameFocused,form.lastname)}
                 />
                 <div className="visibility">
                 <input

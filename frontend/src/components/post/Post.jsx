@@ -21,7 +21,7 @@ import getRequest from '../axios/axios'
 import { AuthContext } from '../context/authcontext';
 import { Button } from '@mui/material';
 // import Share from '../share/share';
-function Post({post}) {
+function Post({post,ispostvisible}) {
 const {currentUser} =useContext(AuthContext)
   const [commenttoggle,setCommenttoggle]=useState(false);
   const[deleteopen,setDeleteopen]=useState(false)
@@ -34,7 +34,7 @@ const {currentUser} =useContext(AuthContext)
            })
            .catch(error => {
            
-            // navigate("/login");
+            navigate("/login");
             console.log(error);
             console.log('Error response data:', error.response.data);
             console.log('Error status:', error.response.status);
@@ -84,7 +84,9 @@ const handleDelete=()=>{
 }
   console.log(`data likes${data}`);
   return (
+   
     <div>
+      
       <div className='post '>
       <div className='container shadow'>
       <div className='user mb-3'>

@@ -11,7 +11,7 @@
     /* justify-content: space-around; */
     gap: 30px;
 }
-.left{
+.leftl{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -55,7 +55,29 @@
     border-radius: 50%;
 }
 @media(max-width:600px){
-    .navbar{
+
+  
+  .rightnav,.left{
+    gap: 5px;
+  }
+  .profile{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.leftl{
+    margin-right: 0px;
+    
+}
+
+.rightnav{
+    margin-left: 0px;
+    padding-left: 0px;
+}
+.search,.in1{
+    display: none;
+}
+    /* .navbar{
         display: none;
-    }
+    } */
 }

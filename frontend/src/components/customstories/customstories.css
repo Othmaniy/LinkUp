@@ -1,0 +1,48 @@
+custom-stories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .thumbnails {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .thumbnails img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .thumbnails img.active {
+    border: 2px solid #4caf50; /* Highlight the active thumbnail */
+  }
+  
+  .main-story {
+    margin-top: 16px;
+    position: relative;
+  }
+  
+  .main-image {
+    max-width: 50%;
+    border-radius: 8px; /* Add some border radius to the main image */
+  }
+  
+  .next-button {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .next-button:hover {
+    background-color: #45a049;
+  }

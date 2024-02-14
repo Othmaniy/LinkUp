@@ -8,6 +8,7 @@ import {
   QueryClientProvider,
 } from 'react-query'
 import getRequest from '../axios/axios';
+import "./friend.css"
 function Friend({suser}) {
 const userid = suser.user_id;
 const {currentUser} = useContext(AuthContext);
@@ -57,12 +58,12 @@ const handlefollow =()=>{
     <>
     
     {relaisloading?"loading":<div>
-    <div className='use'>
-              <img src= {"/upload/"+suser.profilepicture} alt=""  className='profile'/>
-              <span className='username'>{suser.name}</span>
+    <div className='use mt-2'>
+              <img src= {"/upload/"+suser.profilepicture} alt=""  className='profile friendimg'/>
+              <span className='username ml-3'>{suser.name + " "+suser.lastname}</span>
             </div>
-            <div className='buttons'>
-              <button className='buttonn1 b1 mx-2' onClick={handlefollow}>{relationdata?.includes(currentUser.user_id)?"following":"follow"} </button>
+            <div className='buttons mt-2'>
+              <button className='buttonn1 b1 mx-2' onClick={handlefollow}>{relationdata?.includes(currentUser.user_id)?"Unfollow":"follow"} </button>
               {/* <button className='button2 b2'>Remove</button> */}
             </div>
     </div> }

@@ -33,6 +33,7 @@ const pool = mysql.createPool({
     email varchar(255) not null,
     password varchar(255) not null,
     name varchar(255) not null ,
+    lastname varchar(255) not null,
     coverpic varchar(255),
     profilepicture varchar(255),
     location varchar(255),
