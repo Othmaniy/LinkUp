@@ -100,7 +100,7 @@ const handleDelete=()=>{
             </div>
           </div>
           <MoreHorizIcon onClick={()=>setDeleteopen(!deleteopen)}/>
-          {deleteopen && <button onClick={handleDelete}>delete</button>}
+          {deleteopen && post.user_id===currentUser.user_id && <button onClick={handleDelete}>delete</button>}
         </div>
         <div className='photo'>
           {/* <span className=''>{post.text}</span> */}

@@ -50,9 +50,14 @@
 }
 
 @media(max-width:600px){
+
+    .post{
+        width: 100vw;
+    }
     .container{
       padding: 5px;
       width: 95%;
       
     }
+
 }

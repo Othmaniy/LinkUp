@@ -9,6 +9,7 @@ import {
 } from 'react-query'
 import getRequest from '../axios/axios';
 import "./friend.css"
+import { Link } from 'react-router-dom';
 function Friend({suser}) {
 const userid = suser.user_id;
 const {currentUser} = useContext(AuthContext);
@@ -55,20 +56,23 @@ const handlefollow =()=>{
   
 
   return (
-    <>
+    <div className='friends5 shadow mb-4'>
     
     {relaisloading?"loading":<div>
-    <div className='use mt-2'>
+
+      <Link to={`/profile/${suser.user_id}`}><div className='use mt-2'>
               <img src= {"/upload/"+suser.profilepicture} alt=""  className='profile friendimg'/>
               <span className='username ml-3'>{suser.name + " "+suser.lastname}</span>
-            </div>
+            </div></Link>
+    
+            <span className='locationt'>{suser.location}</span>
             <div className='buttons mt-2'>
               <button className='buttonn1 b1 mx-2' onClick={handlefollow}>{relationdata?.includes(currentUser.user_id)?"Unfollow":"follow"} </button>
               {/* <button className='button2 b2'>Remove</button> */}
             </div>
     </div> }
         
-    </>
+    </div>
   )
 }
 

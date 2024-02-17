@@ -3,6 +3,8 @@
 }
 .use{
     gap: 20px;
+    /* background-color: black; */
+
 }
 .frendsandButton{
     gap: 0px;
@@ -10,11 +12,30 @@
 /* .buttons{
     margin-left: 0px;
 } */
+
+
 .buttonn1{
-    width: 100px;
+    width: 95px;
     height: 40px;
-    background-color: rgb(40, 122, 128);
+    background-color: rgb(255, 115, 0);
+    border-radius: 20px;
+    /* padding-left: 30px; */
+}
+.buttonn1:hover{
+    background-color: #fff;
+    color: rgb(255, 115, 0);
+    border: 2px solid rgb(255, 115, 0);
 }
 .friendimg{
     margin-right: 10px;
+}
+.friends5{
+    background-color: white;
+    padding: 10px;
+
+}
+.locationt{
+    padding-left:50px ;
+    margin-top: 0px;
+    padding-top: 0px;
 }

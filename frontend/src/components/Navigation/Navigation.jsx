@@ -15,34 +15,26 @@ function Navigation() {
   const {currentUser} = useContext(AuthContext)
   return (
     <>
-    <div className='navbar'>
-    <div className='leftl'>
-        <span>ousmanbook</span>
-        <HomeOutlinedIcon />
-        <Link to="/friends"><PersonIcon /></Link>
+     <div className='nav'>
+      <div className="leftnavigation">
+        <Link to={`profile/${currentUser.user_id}`}> <img className='profile' src={"/upload/"+currentUser.profilepicture} alt="" /></Link>
+
+        <Link to={"/"}> <HomeOutlinedIcon className='icons' /></Link>
+       
+       
+
+        <Link to={"/friends"} >
+        <PersonIcon className='icons' />
+        </Link>
         
-        <AppsOutlinedIcon/>
-        <div className='search' style={{display:"flex"}}>
-          {/* <SearchIcon className='sic' /> */}
-          <input className='in1' type="text" placeholder='search'/>
-        </div>
       </div>
+      <div className='rightnavigation'>
+      <span>{currentUser.name}</span>
+      <EmailIcon  className='icons' />
+      <NotificationsIcon className='icons' />
       
-      <div className='rightnav'>
-        
-        <EmailIcon />
-        <NotificationsIcon />
-        <div className='userp'>
-        <img src={"/upload/"+currentUser.profilepicture} className='profile' />
-        <Link  to ={`/profile/${currentUser.user_id}`}>
-        <span>
-          {currentUser.name}
-        </span></Link>
-        
-        </div>
-        
       </div>
-    </div>
+     </div>
       
     </>
   )

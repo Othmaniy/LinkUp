@@ -6,6 +6,7 @@
     top: 60px;
     height: calc(100vh - 60px);
     overflow-y: scroll;
+    background-color: white;
     
 }
 
@@ -32,6 +33,7 @@
     justify-content: center;
     flex-direction: column;
     padding: 10px;
+    background-color: white;
 }
 .frendsandButton{
     display: flex;

@@ -37,7 +37,7 @@
 .postinput:focus{
     border: none;
     outline: none;
-    border-bottom: 1px solid black;
+    border-bottom: 3px solid rgb(255, 115, 0);
 }
 .and{
     margin-right: 10px;
@@ -57,11 +57,17 @@
     flex: 1;
     justify-content: flex-end;
 }
-
+.sharebutton{
+    background-color: rgb(255, 115, 0);
+    color: white;
+   border-radius: 20px;
+}
 @media(max-width:600px){
+    .share{
+        width: 100vw;
+        /* padding: 5px; */
+    }
     .sharecontainer{
-      /* padding: 5px; */
-      width: 95%;
-      
+        width: 95%;
     }
 }
