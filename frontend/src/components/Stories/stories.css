@@ -48,7 +48,15 @@
     transform: translate(-50%, -50%);
     z-index: 100;
   }
-  
+  .storysubmit{
+    font-size: 70px;
+    z-index: 200;
+    font-weight: bold;
+    color: orange;
+    position: absolute;
+    top: -25%;
+    left: 20%;
+  }
   
   .full{
     /* background-color: white; */
@@ -123,6 +131,31 @@
     height: 40px;
     
   } */
+  .spreviewdiv{
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 300; */
+   
+  }
+  .storiespreview{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+  }
+  .ssubbu{
+    width: 100px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: 50%;
+    left: 42%;
+  }
 @media(max-width:600px){
   .containerrr{
     width: 100vw;

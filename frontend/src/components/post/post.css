@@ -18,6 +18,7 @@
 .user{
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 .userprofile{
     display: flex;
@@ -47,6 +48,17 @@
 }
 .commentdiv{
     cursor: pointer;
+}
+.deletebutton{
+    width: 80px;
+    height: 30px;
+    background-color: red;
+    border-radius: 6px;
+    padding: 2px;
+    position: absolute;
+    top: 50%;
+    right: -1%;
+
 }
 
 @media(max-width:600px){

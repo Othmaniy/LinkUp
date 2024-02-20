@@ -20,7 +20,12 @@ const createnewstory =(data,tokenid,callback)=>{
 
 
 const selectstory=(req,tokenid,callback)=>{
-    const q= `SELECT s.*,u.user_id,username FROM stories AS s join user AS u ON (u.user_id=s.user_id) LEFT JOIN relationship AS r ON (s.user_id=r.followeduser) WHERE r.followeruser=? OR s.user_id=?`
+    const q= `SELECT DISTINCT s.*, u.user_id, username 
+    FROM stories AS s 
+    JOIN user AS u ON u.user_id = s.user_id 
+    LEFT JOIN relationship AS r ON s.user_id = r.followeduser 
+    WHERE r.followeruser = ? OR s.user_id = ?
+    `
 
     //"SELECT s.*,u.user_id,username FROM stories AS s join users AS u ON (u.user_id=s.user_id) LEFT JOIN relationship AS r ON (s.user_id=r.followeduser) WHERE r.followeruser=NULL OR s.user_id=?"
     // "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?' at line 1"

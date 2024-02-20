@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import "./stories.css";
 import { AuthContext } from '../context/authcontext';
 import {
@@ -20,6 +20,8 @@ function Storiess() {
   const [storyFile, setStoryFile] = useState(null);
   const [activeStoryIndex, setActiveStoryIndex] = useState(null);
   const [isPostsVisible, setIsPostsVisible] = useState(true);
+  const [storiesData, setStoriesData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const upload = async () => {
     try {
@@ -47,6 +49,18 @@ function Storiess() {
     .catch(error => console.log(error))
   );
 
+  useEffect(() => {
+    if (!isLoading && data) {
+      setStoriesData(data);
+      setLoading(false);
+    }
+  }, [isLoading, data]);
+
+  useEffect(() => {
+    console.log("Active Story Index: ", activeStoryIndex);
+    console.log("Stories Data: ", storiesData);
+  }, [activeStoryIndex, storiesData]);
+
   const handleStory = async (e) => {
     e.preventDefault();
     let imageUrl = "";
@@ -58,14 +72,15 @@ function Storiess() {
   const handleStoryClick = (index) => {
     setActiveStoryIndex(index);
     setIsPostsVisible(false); // Hide posts when a story is clicked
+  
   };
 
   const handlePrevClick = () => {
-    setActiveStoryIndex(activeStoryIndex === 0 ? data.length - 1 : activeStoryIndex - 1);
+    setActiveStoryIndex(activeStoryIndex === 0 ? storiesData.length - 1 : activeStoryIndex - 1);
   };
 
   const handleNextClick = () => {
-    setActiveStoryIndex(activeStoryIndex === data.length - 1 ? 0 : activeStoryIndex + 1);
+    setActiveStoryIndex(activeStoryIndex === storiesData.length - 1 ? 0 : activeStoryIndex + 1);
   };
 
   const handleClose = () => {
@@ -76,10 +91,21 @@ function Storiess() {
   return (
     <>
       <div className='containerrr'>
-        {isPostsVisible && ( // Render posts only when isPostsVisible is true
+        {isPostsVisible && ( 
           <>
-            {isLoading ? "loading" : data.map((story, index) => (
-              <div className="content" key={story.id} onClick={() => handleStoryClick(index)}>
+            <div className="content">
+              <img className='simage' src={"/upload/"+currentUser.profilepicture} alt="" />
+              <input type="file" id='storyfile' style={{display:"none"}} onChange={(e)=>{setStoryFile(e.target.files[0])}} />
+              <label htmlFor="storyfile">
+                <span className='storysubmit'>+</span>
+              </label>
+              
+          
+             
+            </div>
+            
+            {loading ? "loading" : storiesData.map((story, index) => (
+              <div className="content" key={index} onClick={() => handleStoryClick(index)}>
                 <img src={"/upload/" + story.storyimage} alt="storyimage" />
               </div>
             ))}
@@ -96,19 +122,23 @@ function Storiess() {
               <FcPrevious className='previousi' />
             </div>
             <div className="fullimage">
-              <img src={"/upload/"+data[activeStoryIndex].storyimage} alt="" className='fullstoryimage' />
+              <img src={"/upload/"+storiesData[activeStoryIndex].storyimage} alt="" className='fullstoryimage' />
             </div>
             <div className="next" onClick={handleNextClick}>
               <FcNext className='nexti' />
             </div>
           </div>
           <div className="description">
-            <span>{data[activeStoryIndex].name}</span>
+            <span>{storiesData[activeStoryIndex].name}</span>
           </div>
         </div>
       )}
 
-      {/* <Home ispostvisible={isPostsVisible} /> */}
+{storyFile && <div className='spreviewdiv'>
+                <img className='storiespreview' src={URL.createObjectURL(storyFile)} alt="" /> 
+               <button className='ssubbu' onClick={handleStory}>sub</button>
+              
+              </div>  }
     </>
   );
 }

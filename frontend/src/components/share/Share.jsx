@@ -83,8 +83,10 @@ const queryClient=useQueryClient();
           
           <div className='inputs'>
           <div className='leftSideInput'>
-          <img src={"/upload/"+currentUser.profilepicture} alt="" className='profile and' />
-            <input type="text" placeholder={`what is your mind ${currentUser.name}`} className='postinput' onChange={(e)=>{setPostdescr(e.target.value)}} value={postdescr} />
+          <img src={"/upload/"+currentUser.
+profilepicture
+} alt="" className='profile and' />
+            <input type="text" placeholder={`what is on your mind ${currentUser.name}`} className='postinput' onChange={(e)=>{setPostdescr(e.target.value)}} value={postdescr} />
           </div>
           <div className="rightSideInput">
             {file&& <img className='postImagePreview' src={URL.createObjectURL(file)} />}
