@@ -58,8 +58,7 @@ const pool = mysql.createPool({
     comentdescr varchar(255),
     createdat DATETIME,
     PRIMARY KEY (comment_id),
-    FOREIGN KEY (comment_user_id) REFERENCES user(user_id) ON DELETE CASCADE,
-    FOREIGN KEY (user_id) REFERENCES user(user_id) ON UPDATE CASCADE,
+    FOREIGN KEY (comment_user_id ) REFERENCES user(user_id) ON DELETE CASCADE,
     FOREIGN KEY (post_id) REFERENCES post(post_id) ON UPDATE CASCADE,
     FOREIGN KEY (post_id) REFERENCES post(post_id) ON DELETE CASCADE
 
@@ -72,7 +71,7 @@ const pool = mysql.createPool({
     createdat DATETIME,
     PRIMARY KEY (story_id),
     FOREIGN KEY (user_id) REFERENCES user(user_id) ON UPDATE CASCADE,
-    FOREIGN KEY (user_id) REFERENCES post(user_id) ON DELETE CASCADE
+    FOREIGN KEY (user_id) REFERENCES user(user_id) ON DELETE CASCADE
 
   )`
   let relationship = `CREATE TABLE IF NOT EXISTS relationship (
@@ -146,6 +145,28 @@ const pool = mysql.createPool({
       console.log("stories table create successfully");
     }
   })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //   let profile = `CREATE TABLE if not exists profile(
 //     user_profile_id int auto_increment,
 //     user_id int,

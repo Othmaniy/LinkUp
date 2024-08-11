@@ -20,7 +20,7 @@ const createnewstory =(data,tokenid,callback)=>{
 
 
 const selectstory=(req,tokenid,callback)=>{
-    const q= `SELECT DISTINCT s.*, u.user_id, username 
+    const q= `SELECT DISTINCT s.*, u.user_id, u.name 
     FROM stories AS s 
     JOIN user AS u ON u.user_id = s.user_id 
     LEFT JOIN relationship AS r ON s.user_id = r.followeduser 
