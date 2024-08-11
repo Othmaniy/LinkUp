@@ -12,7 +12,9 @@
   ::-webkit-scrollbar{
     display: none;
   }
-  
+  .uprofile{
+    margin-right: 10px;
+  }
   .leftbar {
     /* Styles for your left sidebar */
     width: 100%; /* Make sure the width is set to 100% */

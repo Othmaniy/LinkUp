@@ -24,23 +24,20 @@ function Leftbar() {
   return (
     <div className='leftn'>
       <div className='leftbar'>
-        <div className='menu p-2 mx-3'>
-          <div className='userp'>
-            <img src={"/upload/"+currentUser.profilepicture} alt="" className='profile' />
-            <span>{currentUser.name}</span>
-          </div>
-          <div className='item'>
+        <div className='menu p-3 mx-3'>
+          
+          <div className='item '>
             <Leftbarprops
             image={friend}
-            title="frends"
+            title="messages"
             />
             <Leftbarprops
             image={group}
-            title="groups"
+            title="stories"
             />
             <Leftbarprops
             image={marketplace}
-            title="marketplace"
+            title="reels"
             />
             <Leftbarprops
             image={movie}
@@ -50,81 +47,25 @@ function Leftbar() {
             image={clock}
             title="memories"
             />
+             <Leftbarprops
+            image={clock}
+            title="reels"
+            />
+             <Leftbarprops
+            image={clock}
+            title="notification"
+            />
+             <Leftbarprops
+            image={clock}
+            title="profile"
+            />
            
           </div>
           
         
         </div>
-        <hr className='mt-0' />
-        <div className='menu px-2 mx-3'>
-          <div className='item'>
-          <Leftbarprops
-            image={gallery}
-            title="gallery"
-            />
-            <Leftbarprops
-            image={pages}
-            title="pages"
-            />
-            <Leftbarprops
-            image={game}
-            title="video game"
-            />
-            <Leftbarprops
-            image={video}
-            title="video"
-            />
-            <Leftbarprops
-            image={message}
-            title="messages"
-            />
-          </div>
-         
-
-        </div>
-        <hr />
-        <div className='menu px-2 mx-3'>
-          <div className='item'>
-          <Leftbarprops
-            image={calender}
-            title="events"
-            />
-            <Leftbarprops
-            image={fundraiser}
-            title="fundraiser"
-            />
-            <Leftbarprops
-            image={tutorials}
-            title="tutorials"
-            />
-            <Leftbarprops
-            image={calender}
-            title="events"
-            />
-            <Leftbarprops
-            image={fundraiser}
-            title="fundraiser"
-            />
-            <Leftbarprops
-            image={tutorials}
-            title="tutorials"
-            />
-            <Leftbarprops
-            image={calender}
-            title="events"
-            />
-            <Leftbarprops
-            image={fundraiser}
-            title="fundraiser"
-            />
-            <Leftbarprops
-            image={tutorials}
-            title="tutorials"
-            />
-          </div>
-         
-
-        </div>
+        
+       
         
       </div>
       
