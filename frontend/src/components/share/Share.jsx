@@ -2,9 +2,8 @@ import React, { useContext, useState } from 'react'
 import "./share.css"
 import { AuthContext } from '../context/authcontext'
 import gallery from "../../assets/picture_2659360.png"
-import message from "../../assets/comments_2190552.png"
-import friend from "../../assets/friends_880594.png"
-import {
+
+import {  
   useQuery,
   useMutation,
   useQueryClient,
@@ -101,20 +100,9 @@ profilepicture
                   <label htmlFor="file">
                   <div className='items'>
                   <img src={gallery} alt="" className='icons'/>
-                   <span  className="">add image</span>
+                   <span  className="">image</span>
                   </div>
                   </label>
-               
-
-                
-                <div className='items mr-3'>
-                <img src={message} alt="" className='icons'  />
-                <span>add place</span>
-                </div>
-                <div className='items'>
-                <img src={friend} alt="" className='icons' />
-                <span>tagfrend</span>
-                </div>
             </div>
             <button className='sharebutton' onClick={handleClick}>post</button>
            </div>

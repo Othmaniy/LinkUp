@@ -52,7 +52,7 @@ function Profile() {
   const { isLoading:relaisloading, error:relerror, data:relationdata } = useQuery(["relationship"], () =>
         
   getRequest.get(`/relationships?followeduser=`+userid).then((res)=>{
-   console.log("Response from profile relaationship API:", res.data);
+   console.log("Response from profile relationship API:", res.data);
    return res.data
   })
   .catch(error => {

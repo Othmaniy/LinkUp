@@ -25,6 +25,7 @@ function Storiess() {
 
   const upload = async () => {
     try {
+      console.log("upload stories working");
       const formData = new FormData();
       formData.append("file", storyFile);
       const res = await getRequest.post("/upload/stories", formData);
@@ -62,9 +63,11 @@ function Storiess() {
   }, [activeStoryIndex, storiesData]);
 
   const handleStory = async (e) => {
+    console.log("inside handle story");
     e.preventDefault();
     let imageUrl = "";
     if (storyFile) imageUrl = await upload();
+    console.log(imageUrl);
     mutation.mutate({ storyimage: imageUrl });
     setStoryFile(null);
   };
@@ -87,7 +90,8 @@ function Storiess() {
     setActiveStoryIndex(null);
     setIsPostsVisible(true); // Show posts when closing the active story
   };
-
+  console.log("stories data");
+console.log(storiesData);
   return (
     <>
       <div className='containerrr'>
@@ -106,7 +110,7 @@ function Storiess() {
             
             {loading ? "loading" : storiesData.map((story, index) => (
               <div className="content" key={index} onClick={() => handleStoryClick(index)}>
-                <img src={"/upload/" + story.storyimage} alt="storyimage" />
+                <img src={"/upload/" + story.storyimage} alt="storyimage" className='border ' />
               </div>
             ))}
           </>
@@ -122,10 +126,14 @@ function Storiess() {
               <FcPrevious className='previousi' />
             </div>
             <div className="fullimage">
-              <img src={"/upload/"+storiesData[activeStoryIndex].storyimage} alt="" className='fullstoryimage' />
+              <img src={"/upload/"+storiesData[activeStoryIndex].storyimage} alt="" className='fullstoryimage border rounded' />
+              <div className='story-description'>
+                <p className='text-white'>{storiesData[activeStoryIndex].name} <br /> {moment(storiesData[activeStoryIndex].createdat).fromNow()}</p>
+               
+              </div>
             </div>
             <div className="next" onClick={handleNextClick}>
-              <FcNext className='nexti' />
+              <FcNext className='nexti ' />
             </div>
           </div>
           <div className="description">

@@ -74,13 +74,14 @@ const handleclick=async(e)=>{
       <div className='addcomment'>
         <img src={currentUser.profilepic} alt="" />
         <input type="text" placeholder='write comment' className='commentinput' onChange={(e)=>{setcommentdescr(e.target.value)}} value={commentdescr} />
-        <button className='commentbutton' onClick={handleclick}>send</button>
+        <button className='commentbutton' onClick={handleclick}>submit</button>
       </div>
         {isLoading?"loading":data.map(scomment=>(
        <div className='commentdiv my-3'key={scomment.id}>
-        <img src={scomment.profilepicture} alt="" className='profile mt-1 commentp' />
+        <img src={"/upload/"+scomment.profilepicture} alt="" className='profile mt-1 commentp' />
+       
         <div className='description'>
-          <span className='userName' style={{fontWeight:"bold"}}>{scomment.username}</span>
+          <span className='userName' style={{fontWeight:"bold"}}>{scomment.name}</span>
           <p className='commentDescription'>{scomment.comentdescr}</p>
 
 

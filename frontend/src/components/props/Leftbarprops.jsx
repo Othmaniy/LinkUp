@@ -4,9 +4,9 @@ import "./leftbarprops.css"
 function Leftbarprops({image,title}) {
   return (
     <div>
-        <div className='items mb-2'>
+        <div className='items my-5'>
             <img src={image} alt="" className='icons'/>
-            <span>{title}</span>
+            <span className='fs-5'>{title}</span>
         </div>
     </div>
   )

@@ -84,8 +84,9 @@
   .close{
     color: rgb(189, 46, 46);
     position: absolute;
-    top: 200px;
-    right: 40px;
+    top: 110px;
+    right: 50px;
+    cursor: pointer;
   }
   .active{
     opacity: 1;
@@ -100,6 +101,7 @@
   .closei,.previousi,.nexti{
     width: 50px;
     height: 50px;
+    cursor: pointer;
   }
 .fullimage{
     display: flex;
@@ -110,10 +112,10 @@
  {
     /* z-index: 500; */
     width: 750px;
-    height: 6000px;
     max-width: 400px;
     max-height: 600px;
     object-fit: contain;
+    margin-top:40px;
  } 
   /* .test{
     width: 400px;
@@ -155,6 +157,11 @@
     position: absolute;
     top: 50%;
     left: 42%;
+  }
+  .story-description{
+    position: absolute;
+    top: 80%;
+    left: 13%
   }
 @media(max-width:600px){
   .containerrr{
