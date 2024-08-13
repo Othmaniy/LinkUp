@@ -94,12 +94,12 @@ const handleDelete=()=>{
             <img src={"/upload/"+post.profilepicture} alt="" className='profile' />
             <div className='profiledetails'>
               <Link style={{textDecoration:"none",color:"inherit"}} to ={`/profile/${post.user_id}`}>
-                <span className='mb-0'>{post.username}</span>
+                <span className='mb-0'>{post.name}</span>
               </Link>
               <span className='mt-0'>{moment(post.createdat).fromNow()}</span>
             </div>
           </div>
-          <MoreHorizIcon onClick={()=>setDeleteopen(!deleteopen)}/>
+          <MoreHorizIcon style={{cursor:"pointer"}} onClick={()=>setDeleteopen(!deleteopen)}/>
           {deleteopen && post.user_id===currentUser.user_id && <button onClick={handleDelete} className='deletebutton'>delete</button>}
         </div>
         <div className='photo'>
@@ -118,11 +118,7 @@ const handleDelete=()=>{
             <ModeCommentIcon className='mx-2' />
             <span className='mt-0'>comments</span>
           </div>
-          <div className='singleitem mx-2'>
-            <ShareIcon className='mx-2' />
-            <span>share</span>
-            
-          </div>
+          
          
        </div>
        {commenttoggle&&<Comments postid={post.post_id} />}

@@ -9,11 +9,7 @@ const AuthContextProvider =({children})=>{
             withCredentials:true,
         })
     setCurrentUser(response.data)
-        // setCurrentUser({
-        //     id:2,
-        //     name:"kebebe",
-        //     profilepic:"https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=600"
-        // })
+      
     }
     useEffect(()=>{
         localStorage.setItem("user",JSON.stringify(currentUser))
