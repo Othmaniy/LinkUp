@@ -5,7 +5,7 @@ const selectpost=(req,tokenid,callback)=>{
     const userid =parseInt(req.query.userid);
     console.log(typeof(userid));
     
-    const q = userid ? `SELECT DISTINCT p.*,u.user_id,username,profilepicture FROM post AS p JOIN user AS u ON (u.user_id=p.user_id) WHERE p.user_id=?`:`SELECT DISTINCT p.*,u.user_id,username,profilepicture FROM post AS p JOIN user AS u ON (u.user_id=p.user_id) LEFT JOIN relationship AS r ON (p.user_id=r.followeduser) WHERE r.followeruser= ? OR p.user_id =? ORDER BY p.createdat DESC`;
+    const q = userid ? `SELECT DISTINCT p.*,u.user_id,name,profilepicture FROM post AS p JOIN user AS u ON (u.user_id=p.user_id) WHERE p.user_id=?`:`SELECT DISTINCT p.*,u.user_id,name,profilepicture FROM post AS p JOIN user AS u ON (u.user_id=p.user_id) LEFT JOIN relationship AS r ON (p.user_id=r.followeduser) WHERE r.followeruser= ? OR p.user_id =? ORDER BY p.createdat DESC`;
     const values = userid ? [userid]:[tokenid,tokenid];
     pool.query(q,values,(err,data)=>{
         if(err){
