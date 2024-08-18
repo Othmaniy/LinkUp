@@ -23,14 +23,13 @@ function Navigation() {
        
        
 
-        <Link to={"/friends"} >
+        <Link to={"/friendss"} >
         <PersonIcon className='icons' />
         </Link>
         
       </div>
       <div className='rightnavigation'>
       <span>{currentUser.name}</span>
-      <EmailIcon  className='icons' />
       <NotificationsIcon className='icons' />
       
       </div>

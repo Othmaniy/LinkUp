@@ -9,7 +9,7 @@
     /* height: 40px; */
     border-radius: 10px;
     text-align: center;
-    background-color: rgb(247, 89, 144) ;
+    background-color: rgb(255, 115, 0);
   
 }
 .addcomment{
@@ -19,5 +19,5 @@
 .commentinput{
     width: 90%;
     margin-right: 10px;
-    border-color:rgb(247, 89, 144) ;
+    border-color:rgb(255, 115, 0); ;
 }

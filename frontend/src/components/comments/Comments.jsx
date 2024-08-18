@@ -70,6 +70,7 @@ const handleclick=async(e)=>{
 
 // ]
   return (
+    
     <div className='comments my-3'>
       <div className='addcomment'>
         <img src={currentUser.profilepic} alt="" />

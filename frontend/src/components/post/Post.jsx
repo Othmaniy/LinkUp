@@ -110,9 +110,9 @@ const handleDelete=()=>{
         
         <div className='reactions d-flex mt-4'>
           <div className='singleitem mr-2'>
-            {data?.includes (currentUser.user_id)?(<FavoriteIcon style={{color:'red'}} onClick={handleLike} />):(<FavoriteBorderIcon className='mx-1' onClick={handleLike} />)}
+            {data?.includes (currentUser.user_id)?(<FavoriteIcon style={{color:'red',cursor:"pointer"}} onClick={handleLike} />):(<FavoriteBorderIcon className='mx-1' style={{cursor:"pointer"}} onClick={handleLike} />)}
             {/* {data.includes(currentUser.user_id) ? (<FavoriteIcon/>):(<FavoriteBorderIcon className='mx-1' />)} */}
-            <span>{data?.length}likes</span>
+            <span>{data?.length} likes</span>
           </div>
           <div className='singleitem mx-2 commentdiv' onClick={()=>setCommenttoggle(!commenttoggle)}>
             <ModeCommentIcon className='mx-2' />

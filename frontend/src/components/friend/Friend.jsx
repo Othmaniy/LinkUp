@@ -20,7 +20,7 @@ const { isLoading:relaisloading, error:relerror, data:relationdata } = useQuery(
         
 getRequest.get(`/relationships?followeduser=`+userid).then((res)=>{
  console.log("Response from friends relaationship API:", res.data);
- return res.data
+ return res.data 
 })
 .catch(error => {
  // navigate("/login");

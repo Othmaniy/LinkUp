@@ -17,8 +17,13 @@ import tutorials from "../../assets/subscribe_2128421.png"
 import video from "../../assets/video_1179069.png"
 import message from "../../assets/comments_2190552.png"
 import { AuthContext } from '../context/authcontext'
-
-
+import { MdWebStories } from 'react-icons/md'
+import { IoIosNotifications } from 'react-icons/io'
+import { FaSearch } from "react-icons/fa";
+import { LiaFileVideoSolid } from "react-icons/lia";
+import { BiMessageSquare } from "react-icons/bi";
+import { CgDetailsMore } from "react-icons/cg";
+import { IoIosPerson } from "react-icons/io";
 function Leftbar() {
   const {currentUser} = useContext(AuthContext)
   return (
@@ -27,38 +32,54 @@ function Leftbar() {
         <div className='menu p-3 mx-3'>
           
           <div className='item '>
-            <Leftbarprops
-            image={friend}
-            title="messages"
-            />
-            <Leftbarprops
-            image={group}
-            title="stories"
-            />
-            <Leftbarprops
-            image={marketplace}
-            title="reels"
-            />
-            <Leftbarprops
-            image={movie}
-            title="watch"
-            />
-            <Leftbarprops
-            image={clock}
-            title="memories"
-            />
-             <Leftbarprops
-            image={clock}
-            title="reels"
-            />
-             <Leftbarprops
-            image={clock}
-            title="notification"
-            />
-             <Leftbarprops
-            image={clock}
-            title="profile"
-            />
+          <div className='icons_and_text_wrapper'>
+           <IoIosPerson className='ic'/> 
+           <div className='icon_text'>
+           <h5 className='te'>friends</h5>
+           </div>
+          
+           </div>
+           <div className='icons_and_text_wrapper'>
+           <IoIosNotifications className='ic' />
+           <div className='icon_text'>
+           <h5 className='te'>notifications</h5>
+           </div>
+          
+           </div>
+           <div className='icons_and_text_wrapper'>
+           <FaSearch className='ic' />
+           <div className="icon_text">
+           <h5>search</h5>
+           </div>
+          
+           </div>
+           <div className='icons_and_text_wrapper'>
+           <LiaFileVideoSolid className='ic' />
+           <div className="icon_text">
+           <h5>reels</h5>
+           </div>
+           
+           </div>
+           <div className='icons_and_text_wrapper'>
+           <BiMessageSquare className='ic' />
+           
+           <div className="icon_text">
+           <h5>message</h5>
+           </div>
+           </div>
+           <div className='icons_and_text_wrapper'>
+           <CgDetailsMore className='ic' />
+           <div className="icon_text">
+           <h5>more</h5>
+           </div>
+           
+           </div>
+            
+           
+           
+            
+            
+        
            
           </div>
           

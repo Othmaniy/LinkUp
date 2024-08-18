@@ -54,6 +54,23 @@ function App() {
       </QueryClientProvider>
     );
   };
+  const FriendsLayout = () => {
+    return (
+      <QueryClientProvider client={queryClient}>
+      <div>
+        <Navigation />
+        <div style={{ display: "flex" }} className="layoutWrapper">
+          <Leftbar />
+          <div style={{ flex: 6,backgroundColor:"#f2f2f2"}}>
+            <Friends />
+          </div>
+
+          {/* <Rightbar /> */}
+        </div>
+      </div>
+      </QueryClientProvider>
+    );
+  };
 
   return (
     <Router>
@@ -71,8 +88,17 @@ function App() {
             <Route path="/profile/:id" element={<Profile />} />
             <Route path ="/friends" element ={<Friends />} />
           </Route>
+          <Route
+            path="/friendss"
+            element={
+              <ProtectedRoute>
+                <FriendsLayout />
+              </ProtectedRoute>
+            }
+          ></Route>
           <Route path="/signup" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          
           
         </Routes>
       </>

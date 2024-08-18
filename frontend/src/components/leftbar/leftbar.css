@@ -23,6 +23,32 @@
   hr{
     width: 200px;
   }
+  .item{
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    margin-top: 40px;
+  }
+  .ic{
+    font-size: 30px;
+  }
+  .icons_and_text_wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+   
+    
+  }
+  .te{
+    text-align: center;
+  }
+.icon_text{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+}
   /* ... (other CSS rules) */
   @media(max-width:600px){
     .leftn{

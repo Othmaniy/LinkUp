@@ -48,7 +48,7 @@ function Friends() {
     
       
         <div className='frendsandButtontyt'>
-          <p>abcgagafafa</p>
+          
           
           {/* {isLoading?"loading":data?.map((suser)=>{
             <Friend suser={suser} key={suser.user_id} />
