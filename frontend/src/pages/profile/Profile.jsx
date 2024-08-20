@@ -91,35 +91,23 @@ mutation.mutate(relationdata?.includes(currentUser.user_id))
   
   return (
     <div className='profilepage'>
-      {isLoading?"loading":<div className='allContainer'>
+      {isLoading?(<div className="loader"></div>):<div className='allContainer'>
         <div className="images">
           <img src= {"/upload/"+data?.coverpic} className='coverpicture' />
           <img src= {"/upload/"+data?.profilepicture}  className='profierpicture'  />
         </div>
         <div className="contact shadow my-3">
-          <div className="icons px-3">
-            <a href="facebook.com"><FacebookOutlinedIcon fontSize='large' /></a>
-            <a href="facebook.com"><LinkedInIcon fontSize='large' /></a>
-            <a href="facebook.com"><TwitterIcon fontSize='large'/></a>
-            <a href="facebook.com"><InstagramIcon fontSize='large'/></a>
-          </div>
-          <div className="location mx-5">
+          <div className="name_and_button_wrapper">
             <p className='ppname'>{data?.username} </p>
             <div className="middleicons">
-            <span className=''>{data?.location}</span>
-            <AddLocationIcon className='mr-2 adloc' />
-            <span className=''>{data?.website}</span>
-            <LanguageIcon />
+            <span className=''>{data?.name} </span>
+            <span className=''>{data?.lastname}</span>
             </div>
             {userid === currentUser.user_id? (<button className='profileButton mt-2' onClick={()=>setOpenupdate(true)}>update</button>):(<button 
-            onClick={handlefollow} className='profileButton mt-2'>{relationdata?.includes(currentUser.user_id)?"following":"follow"}</button>)}
+            onClick={handlefollow} className='profileButton mt-2'>{relationdata?.includes(currentUser.user_id)?"unfollow":"follow"}</button>)}
             {/* <button className='profileButton mt-2'>follow</button> */}
      
             
-          </div>
-          <div className="message">
-            <EmailOutlinedIcon />
-            <MoreVertIcon />
           </div>
         </div>
         <Posts userid={userid} />

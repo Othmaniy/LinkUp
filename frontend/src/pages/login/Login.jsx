@@ -102,9 +102,9 @@ console.log(form);
                     }}
                     style={getInputStyle(isemailFocused,form.email)}
                   />
-                  <div className="visibility">
+                  <div className="visibility loginv">
                   <input
-                    type="password"
+                    type={visible?"text":"password"}
                     placeholder="password"
                     name="password"
                     className="mt-3"

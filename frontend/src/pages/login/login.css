@@ -1,4 +1,4 @@
-.all{
+.all {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
@@ -6,41 +6,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-form{
+  }
+  
+  form {
     display: flex;
     flex-direction: column;
     width: 100%;
     justify-content: center;
     align-items: center;
-}
-input{
+  }
+  input {
     height: 40px;
     /* border-radius: 4px; */
     padding: 8px;
-	/* border: 1px solid #ccc; */
+    /* border: 1px solid #ccc; */
     width: 95%;
-    border: 3px solid blue;
-	
-    
-}
+    /* border: 3px solid blue; */
+  }
+  
 
-.leftcontainer{
-    /* margin-top: 30px; */
-    /* background-image: url("../../assets//Arba_Minch_University.png"); */
-    /* background-color: aqua; */
-    /* background-size: cover; */
-    /* background-repeat: no-repeat; */
-}
-button{
+  button {
     padding: 9px;
     background-color: green;
     border: none;
     border-radius: 4px;
     width: 95%;
-}
-.leftcontainer,.rightcontainer{
+  }
+  .leftcontainer,
+  .rightcontainer {
     height: 400px;
     /* border: 1px solid black; */
     display: flex;
@@ -48,16 +41,20 @@ button{
     justify-content: center;
     align-items: center;
     border-radius: 4px;
-}
-h1{
-    font-size: 3.5em;
-}
-.button1{
-    background-color: antiquewhite;
-}
-
-
-
-input:focus {
-    outline: none;
   }
+  h1 {
+    font-size: 3.5em;
+  }
+  .button1 {
+    background-color: antiquewhite;
+  }
+  .loginv .eye{
+    position: absolute;
+    top: 25px;
+    left: 430px;
+    cursor: pointer;
+
+  }
+  
+
+  
